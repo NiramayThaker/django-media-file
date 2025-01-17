@@ -1,10 +1,37 @@
 {% extends "core/base.html" %}
+{% load widget_tweaks %}
 
 {% block content %}
 
 <div class="p-8 flex flex-col items-center">
     <h1 class="font-medium leading-tight text-4xl mt-0 mb-4 text-blue-600">Welcome!</h1>
     
+    <form method="POST" enctype="multipart/form-data">
+    
+        {% csrf_token %}
+
+        <div class="mb-4">
+            <label for="{{ form.name.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                {{ form.name.label }}
+            </label>
+            {% render_field form.name class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded" %}
+        </div>
+        
+        <div class="mb-4">
+            <label for="{{ form.image.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                {{ form.image.label }}
+            </label>
+            {% render_field form.image class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded" %}
+        </div>
+        
+
+        <input 
+            type="submit" 
+            value="submit" 
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none"
+        >
+    </form>
+
 </div>
 
 {% endblock content %}
