@@ -7,5 +7,5 @@ class DogForm(forms.ModelForm):
 		model = Dog
 		fields = ('name', 'image')
 		widgets = {
-			'image': forms.FileInput(attrs= {'accept': '.png, .jpg'})
+			'image': forms.FileInput(attrs={'accept': '.png, .jpg'})
 		}

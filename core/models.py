@@ -9,6 +9,7 @@ ext_validator = FileExtensionValidator(['png', 'jpg', 'pdf'])
 def validate_file_mimetype(file):
 	accept = ['image/png', 'image/jpeg', 'application/pdf']
 	file_name_type = magic.from_buffer(file.read(1024), mime=True)
+	file.seek(0)
 	print(file_name_type)
 
 	if file_name_type not in accept:
