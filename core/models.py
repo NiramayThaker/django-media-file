@@ -3,7 +3,6 @@ from django.core.validators import FileExtensionValidator
 
 ext_validator = FileExtensionValidator(['png', 'jpg', 'pdf'])
 
-
 # Create your models here.
 class Dog(models.Model):
 	name = models.CharField(max_length=64)
