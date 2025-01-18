@@ -5,6 +5,7 @@
 
 <div class="p-8 flex flex-col items-center">
     <h1 class="font-medium leading-tight text-4xl mt-0 mb-4 text-blue-600">Welcome!</h1>
+    <a href="{% url 'all-dogs' %}" class="font-medium leading-tight text-1xl mt-0 mb-4 text-blue-600">View all dogs</a>
     
     <form method="POST" enctype="multipart/form-data">
     
@@ -22,6 +23,7 @@
                 {{ form.image.label }}
             </label>
             {% render_field form.image class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded" %}
+            <div class="text-red-500">{{ form.image.errors }}</div>
         </div>
         
 

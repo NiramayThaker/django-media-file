@@ -4,6 +4,8 @@
 {% block content %}
     <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;">
 
+        <a href="{% url 'form' %}" class="font-medium leading-tight text-1xl mt-0 mb-4 text-blue-600">Add a dog</a>
+
         {% for dog in dogs %}
 
             <h2 class=dog-id>{{dog.id}}</h2>
